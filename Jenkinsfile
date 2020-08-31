@@ -1,33 +1,34 @@
+
 pipeline { 
   agent any
 
-//    environment {
+   environment {
 
-//         EMAIL_BODY = 
+        EMAIL_BODY = 
 
-//         """
+        """
 
-//             <p>EXECUTED: Job <b>\'${env.JOB_NAME}:${env.BUILD_NUMBER})\'</b></p>
+            <p>EXECUTED: Job <b>\'${env.JOB_NAME}:${env.BUILD_NUMBER})\'</b></p>
 
-//             <p>
+            <p>
 
-//             View console output at 
+            View console output at 
 
-//             "<a href="${env.BUILD_URL}">${env.JOB_NAME}:${env.BUILD_NUMBER}</a>"
+            "<a href="${env.BUILD_URL}">${env.JOB_NAME}:${env.BUILD_NUMBER}</a>"
 
-//             </p> 
+            </p> 
 
-//             <p><i>(Build log is attached.)</i></p>
+            <p><i>(Build log is attached.)</i></p>
 
-//         """
+        """
 
-//         EMAIL_SUBJECT_SUCCESS = "Status: 'SUCCESS' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
+        EMAIL_SUBJECT_SUCCESS = "Status: 'SUCCESS' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
 
-//         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
+        EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
 
-//         EMAIL_RECEPIENT = 'nicholas.v.ndiki@gmail.com'
+        EMAIL_RECEPIENT = 'nicholas.v.ndiki@gmail.com'
 
-//     }
+    }
 
   tools { 
     gradle "Gradle-6"
@@ -49,16 +50,12 @@ pipeline {
       sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/immense-fjord-65904.git master'
     }
   }
-
-   }
-   }
-  
-//  // test stage
-//     stage('Tests') {
-//       steps { 
-//         sh 'gradle test'
-//       }
-//   //post stage build inside a stage
-//       }
-//     }
-//   }
+} // test stage
+    stage('Tests') {
+      steps { 
+        sh 'gradle test'
+      }
+  //post stage build inside a stage
+      }
+    }
+  }
