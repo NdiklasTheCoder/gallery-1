@@ -49,13 +49,13 @@ pipeline {
       sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/immense-fjord-65904.git master'
     }
   }
+  
+ // test stage
+    stage('Tests') {
+      steps { 
+        sh 'gradle test'
+      }
+  //post stage build inside a stage
+      }
+    }
   }
-// } // test stage
-//     stage('Tests') {
-//       steps { 
-//         sh 'gradle test'
-//       }
-//   //post stage build inside a stage
-//       }
-//     }
-//   }
