@@ -45,8 +45,8 @@ pipeline {
     } // build project
    stage('Deploy to Heroku') {
      steps {
-      withCredentials([usernameColonPassword(credentialsId: 'Nicholas', variable: 'HEROKU_CREDENTIALS' )]){
-      sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/floating-headland-06691.git master'
+      withCredentials([usernameColonPassword(credentialsId: 'Ndiki', variable: 'HEROKU_CREDENTIALS' )]){
+      sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/immense-fjord-65904.git master'
     }
   }
 } // test stage
