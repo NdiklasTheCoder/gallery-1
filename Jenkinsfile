@@ -51,11 +51,11 @@ pipeline {
     }
   }
 } // test stage
-    stage('Tests') {
-      steps { 
-        sh 'gradle test'
-      }
-  //post stage build inside a stage
-      }
+  //   stage('Tests') {
+  //     steps { 
+  //       sh 'gradle test'
+  //     }
+  // //post stage build inside a stage
+  //     }
     }
   }
