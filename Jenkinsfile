@@ -31,7 +31,7 @@ pipeline {
     stage('Deploy to Heroku') {
       steps {
         withCredentials([usernameColonPassword(credentialsId: 'Ndiki', variable: 'HEROKU_CREDENTIALS' )]){
-        sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/immense-fjord-65904.git master'
+        sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/glacial-springs-58405.git master'
       }
     }
   }
