@@ -36,6 +36,7 @@ pipeline {
           to: EMAIL_RECEPIENT
         }
       }
+    }
     stage('Build the project') {
       steps { 
         sh 'npm install'
