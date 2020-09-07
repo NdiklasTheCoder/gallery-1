@@ -23,6 +23,19 @@ pipeline {
         git 'https://github.com/NdiklasTheCoder/gallery-1'
       } // end of steps
     }
+     stage('run test') {
+      steps { 
+        sh 'npm test'
+      } 
+      // run test stage
+      post{
+        success{
+          emailext attachLog: true,
+          body: EMAIL_BODY,
+          subject: EMAIL_SUBJECT_FAILURE,
+          to: EMAIL_RECEPIENT
+        }
+      }
     stage('Build the project') {
       steps { 
         sh 'npm install'
