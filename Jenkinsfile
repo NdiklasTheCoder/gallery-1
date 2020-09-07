@@ -36,6 +36,12 @@ pipeline {
           subject: EMAIL_SUBJECT_FAILURE,
           to: EMAIL_RECEPIENT
         }
+        success{
+          emailext attachLog: true,
+          body: EMAIL_BODY,
+          subject: EMAIL_SUBJECT_SUCCESS,
+          to: EMAIL_RECEPIENT
+        }
       }
     }
     stage('Build the project') {
