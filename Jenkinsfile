@@ -73,7 +73,7 @@ pipeline {
         stage 'Deploy'
             echo "Testing deploy."
         stage 'Publish results'
-            slackSend color: "warning", message: "Build successful :sunglasses: \n `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Fire up Jenkins> \n Bravo Site is Live \n https://glacial-springs-58405.herokuapp.com/"
+            slackSend color: "good", message: "Build successful :sunglasses: \n `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Fire up Jenkins> \n Bravo Site is Live \n https://glacial-springs-58405.herokuapp.com/"
     }
     catch (err) {
         slackSend color: "danger", message: "Build failed :disappointed_relieved: \n`${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Fire up Jenkins>"
