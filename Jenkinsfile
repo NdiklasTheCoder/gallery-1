@@ -55,7 +55,10 @@ pipeline {
         sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/glacial-springs-58405.git master'
       }
     }
-    }
+    }  
+}
+}
+
  node {
     try {
         stage 'Checkout'
@@ -76,7 +79,4 @@ pipeline {
         slackSend color: "danger", message: "Build failed :disappointed_relieved: \n`${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Fire up Jenkins>"
         throw err
     }
-}
-    
-}
 }
