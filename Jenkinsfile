@@ -57,10 +57,11 @@ pipeline {
     }
     }
     stage('Checkout') {
-      checkout scm
+      steps {
       sh 'git log HEAD^..HEAD --pretty="%h %an - %s" > GIT_CHANGES'
       def lastChanges = readFile ('GIT_CHANGES')
       slackSend color: "warning", message: "Build Started  `${env.JOB_NAME} ${env.BUILD_NUMBER}`\n\n_The Changes:_\n${lastChanges}"
+      }
     }
     
 }
